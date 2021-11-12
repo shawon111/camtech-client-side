@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../hooks/UseFirebase';
 
 const Header = () => {
-    const {user, handleLogOut} = useFirebase();
+    const { user, handleLogOut } = useFirebase();
     return (
         <header>
             <Container>
                 <div className="nav-container">
-                    <div className="logo">
-                        <h1 style={{ color: '#fff' }} className="logo">Cam Tech</h1>
+                    <div style={{width: '100%', justifyContent: 'center'}} className="logo">
+                        <h1 style={{ color: '#fff', textAlign: 'center' }} className="logo">Cam Tech</h1>
                     </div>
                     <div className="menu">
                         <Link className="menu-item" to="/">Home</Link>
@@ -26,6 +26,7 @@ const Header = () => {
                                     <Link className="menu-item" to="/login">Login</Link>
                             }
                         </div>
+                        
                     </div>
                 </div>
             </Container>
