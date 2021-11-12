@@ -1,0 +1,27 @@
+header{
+    margin-bottom: -145px;
+}
+.menu .menu-item {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    background-image: linear-gradient(to right, var(--primaryColor) , var(--secondaryColor));
+}
+.menu .menu-item:hover{
+    background-image: linear-gradient(to right, var(--brandColor) , var(--orangeColor));
+    color: #fff;
+}
+.logo h1 {
+    font-size: 45px;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 15px;
+}
+.nav-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

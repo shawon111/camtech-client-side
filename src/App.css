@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap');
+/*global styles*/
+::selection {
+    color: #fff;
+    background: var( --secondaryColor );
+  }
+.brand-btn{
+    border: none;
+    background-image: linear-gradient(to right, var(--brandColor) , var(--orangeColor));
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+.primary-btn{
+    border: none;
+    background-image: linear-gradient(to right, var(--primaryColor) , var(--secondaryColor));
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+.primary-btn:hover{
+    background-image: linear-gradient(to right, var(--orangeColor) , var(--brandColor));
+}
+.brand-btn:hover{
+    background-image: linear-gradient(to right, var(--orangeColor) , var(--brandColor));
+}
+
+.section-header{
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--brandColor)
+}
+
+/* fonts */
+p, a {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Spectral', serif;
+    font-weight: 700;
+}
+
+/* colors */
+:root{
+    --brandColor: #eb2f06;
+    --primaryColor: #3C40C6;
+    --secondaryColor: #1e3799;
+    --orangeColor: #e55039;
+}
+
+/* tags */
+header{
+    background-color: #fff;
+    padding: 20px 0px 15px 0px;
+    box-shadow: 0px 0px 10px -5px #000;
+}

@@ -1,0 +1,14 @@
+.pros-box{
+    padding: 30px 40px;
+}
+.pros-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    width: 20%;
+}
+.texts{
+    width: 80%;
+}
