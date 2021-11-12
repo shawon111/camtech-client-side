@@ -60,7 +60,7 @@ function App() {
                 <Route exact path="/purchase">
                    <Purchase></Purchase>
                 </Route>
-                <Route exact path="/registration">
+                <Route exact path="/register">
                    <Registration></Registration>
                 </Route>
                 <Route exact path="*">

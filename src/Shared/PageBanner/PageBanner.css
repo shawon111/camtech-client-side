@@ -1,0 +1,17 @@
+.page-banner{
+    background-image: url(../../images/page-banner.jpg), linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+    background-blend-mode: overlay;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-banner-heading{
+    font-size: 70px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
