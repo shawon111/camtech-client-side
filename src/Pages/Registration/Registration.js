@@ -15,12 +15,10 @@ const Registration = () => {
     const handleEmailInput = e => {
         const email = e.target.value;
         setEmail(email);
-        e.target.value = '';
     }
     const handlePasswordInput = e => {
         const pass = e.target.value;
         setPassword(pass);
-        e.target.value = '';
     }
 
     //handle form submit

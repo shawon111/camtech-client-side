@@ -1,6 +1,7 @@
 import initializeFirebase from "../firebase/firebase.initialize"
 import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router";
 
 initializeFirebase();
 const useFirebase = () => {

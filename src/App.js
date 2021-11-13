@@ -17,60 +17,64 @@ import Registration from './Pages/Registration/Registration';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import Header from './Shared/Header/Header';
 import Footer from './Shared/Footer/Footer';
+import AuthProvider from './context/AuthContext/AuthProvider';
+import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
 
 function App() {
-  return (
-    <div>
-        <BrowserRouter>
-            <Header></Header>
-            <Switch>
-                <Route exact path="/">
-                   <Home></Home>
-                </Route>
-                <Route exact path="/explore">
-                   <Explore></Explore>
-                </Route>
-                <Route exact path="/addproduct">
-                   <AddProduct></AddProduct>
-                </Route>
-                <Route exact path="/addreview">
-                   <AddReview></AddReview>
-                </Route>
-                <Route exact path="/dashboard">
-                   <Dashboard></Dashboard>
-                </Route>
-                <Route exact path="/login">
-                   <Login></Login>
-                </Route>
-                <Route exact path="/makeadmin">
-                   <MakeAdmin></MakeAdmin>
-                </Route>
-                <Route exact path="/manageorders">
-                   <ManageOrders></ManageOrders>
-                </Route>
-                <Route exact path="/manageproducts">
-                   <ManageProduct></ManageProduct>
-                </Route>
-                <Route exact path="/myorders">
-                   <MyOrders></MyOrders>
-                </Route>
-                <Route exact path="/payment">
-                   <Payment></Payment>
-                </Route>
-                <Route exact path="/purchase">
-                   <Purchase></Purchase>
-                </Route>
-                <Route exact path="/register">
-                   <Registration></Registration>
-                </Route>
-                <Route exact path="*">
-                   <PageNotFound></PageNotFound>
-                </Route>
-            </Switch>
-            <Footer></Footer>
-        </BrowserRouter>
-    </div>
-  );
+   return (
+      <div>
+         <AuthProvider>
+            <BrowserRouter>
+               <Header></Header>
+               <Switch>
+                  <Route exact path="/">
+                     <Home></Home>
+                  </Route>
+                  <Route exact path="/explore">
+                     <Explore></Explore>
+                  </Route>
+                  <PrivateRoute exact path="/addproduct">
+                     <AddProduct></AddProduct>
+                  </PrivateRoute>
+                  <PrivateRoute exact path="/addreview">
+                     <AddReview></AddReview>
+                  </PrivateRoute>
+                  <PrivateRoute exact path="/dashboard">
+                     <Dashboard></Dashboard>
+                  </PrivateRoute>
+                  <Route exact path="/login">
+                     <Login></Login>
+                  </Route>
+                  <PrivateRoute exact path="/makeadmin">
+                     <MakeAdmin></MakeAdmin>
+                  </PrivateRoute>
+                  <PrivateRoute exact path="/manageorders">
+                     <ManageOrders></ManageOrders>
+                  </PrivateRoute>
+                  <PrivateRoute exact path="/manageproducts">
+                     <ManageProduct></ManageProduct>
+                  </PrivateRoute>
+                  <PrivateRoute exact path="/myorders">
+                     <MyOrders></MyOrders>
+                  </PrivateRoute>
+                  <PrivateRoute exact path="/payment">
+                     <Payment></Payment>
+                  </PrivateRoute>
+                  <PrivateRoute exact path="/purchase">
+                     <Purchase></Purchase>
+                  </PrivateRoute>
+                  <Route exact path="/register">
+                     <Registration></Registration>
+                  </Route>
+                  <Route exact path="*">
+                     <PageNotFound></PageNotFound>
+                  </Route>
+               </Switch>
+               <Footer></Footer>
+            </BrowserRouter>
+         </AuthProvider>
+      </div>
+   );
 }
 
 export default App;
