@@ -26,7 +26,9 @@ const Header = () => {
                                     <Link className="menu-item" to="/login">Login</Link>
                             }
                         </div>
-                        
+                        {
+                            user.email && <a href="/dashboard">{user?.displayName}</a>
+                        }
                     </div>
                 </div>
             </Container>

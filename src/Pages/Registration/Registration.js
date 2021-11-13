@@ -1,16 +1,21 @@
 import { Alert, Container, TextField } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../hooks/UseFirebase';
+import { useHistory, useLocation } from 'react-router';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
+import UseAuth from '../../hooks/UseAuth';
 
 const Registration = () => {
     const pageName = "Register";
+    const [userName,setUserName] = useState('');
     const {setEmail, setPassword, handleCreateUser} = useFirebase();
 
+    const {user} = UseAuth();
     //get input values
     const handleNameInput = e => {
-        
+        const name = e.target.value;
+        setUserName(name);
     }
     const handleEmailInput = e => {
         const email = e.target.value;
@@ -23,9 +28,15 @@ const Registration = () => {
 
     //handle form submit
     const handleFormSubmit = (e) => {
-        handleCreateUser();
+        handleCreateUser(userName);
         <Alert severity="success">This is a success alert — check it out!</Alert>
         e.preventDefault();
+    }
+
+    //redirect after registration
+    const history = useHistory();
+    if (user?.email) {
+        history.replace('/login');
     }
     return (
         <div>

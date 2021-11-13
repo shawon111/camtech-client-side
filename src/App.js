@@ -60,7 +60,7 @@ function App() {
                   <PrivateRoute exact path="/payment">
                      <Payment></Payment>
                   </PrivateRoute>
-                  <PrivateRoute exact path="/purchase">
+                  <PrivateRoute exact path="/purchase/:id">
                      <Purchase></Purchase>
                   </PrivateRoute>
                   <Route exact path="/register">

@@ -1,0 +1,15 @@
+.product-title{
+    font-size: 30px;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--primaryColor)
+}
+.product-price{
+    font-size: 20px;
+    margin: 15px 0;
+    line-height: 1.4;
+    color: var(--brandColor)
+}
+.product-description{
+    font-size: 18px;
+}

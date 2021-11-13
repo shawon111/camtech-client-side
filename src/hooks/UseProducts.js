@@ -6,7 +6,6 @@ const useProducts = () => {
         fetch('https://serene-beyond-56458.herokuapp.com/products')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             setProducts(data)
         })
     },[]) 
