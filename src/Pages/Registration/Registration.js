@@ -5,6 +5,8 @@ import useFirebase from '../../hooks/UseFirebase';
 import { useHistory, useLocation } from 'react-router';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
 import UseAuth from '../../hooks/UseAuth';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 
 const Registration = () => {
     const pageName = "Register";
@@ -40,6 +42,7 @@ const Registration = () => {
     }
     return (
         <div>
+            <Header></Header>
             <PageBanner pageName={pageName} />
             <section style={{ paddingBottom: '80px' }}>
                 <Container>
@@ -86,6 +89,7 @@ const Registration = () => {
                     </div>
                 </Container>
             </section>
+            <Footer></Footer>
         </div>
     );
 };

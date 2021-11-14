@@ -15,8 +15,6 @@ import Payment from './Pages/Payment/Payment';
 import Purchase from './Pages/Purchase/Purchase';
 import Registration from './Pages/Registration/Registration';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
-import Header from './Shared/Header/Header';
-import Footer from './Shared/Footer/Footer';
 import AuthProvider from './context/AuthContext/AuthProvider';
 import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
 
@@ -25,7 +23,6 @@ function App() {
       <div>
          <AuthProvider>
             <BrowserRouter>
-               <Header></Header>
                <Switch>
                   <Route exact path="/">
                      <Home></Home>
@@ -70,7 +67,6 @@ function App() {
                      <PageNotFound></PageNotFound>
                   </Route>
                </Switch>
-               <Footer></Footer>
             </BrowserRouter>
          </AuthProvider>
       </div>

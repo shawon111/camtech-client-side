@@ -10,6 +10,8 @@ import discount from '../../../images/icon-discounts.png';
 import support from '../../../images/icon-support.png';
 import Product from '../../../Shared/Product/Product';
 import Review from '../../../Shared/Review/Review';
+import Header from '../../../Shared/Header/Header';
+import Footer from '../../../Shared/Footer/Footer';
 
 const Home = () => {
 
@@ -35,6 +37,7 @@ const Home = () => {
     }, [])
     return (
         <div>
+            <Header></Header>
             {/* homepage banner */}
             <section className="home-banner">
                 <Container>
@@ -86,6 +89,7 @@ const Home = () => {
                     </div>
                 </Container>
             </section>
+            <Footer></Footer>
         </div>
     );
 };

@@ -4,13 +4,13 @@ import PageBanner from '../../Shared/PageBanner/PageBanner';
 import { Container, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useHistory, useLocation } from 'react-router';
-import useFirebase from '../../hooks/UseFirebase';
 import UseAuth from '../../hooks/UseAuth';
+import Header from '../../Shared/Header/Header';
+import Footer from '../../Shared/Footer/Footer';
 
 const Login = () => {
     const pageName = "Login";
     const { user, setEmail, setPassword, handleUserLogin } = UseAuth();
-    console.log(user);
     const handleEmailInput = e => {
         const email = e.target.value;
         setEmail(email);
@@ -38,6 +38,7 @@ const Login = () => {
 
     return (
         <div>
+            <Header></Header>
             <PageBanner pageName={pageName} />
             <section style={{ paddingBottom: '80px' }}>
                 <Container>
@@ -75,6 +76,7 @@ const Login = () => {
                     </div>
                 </Container>
             </section>
+            <Footer></Footer>
         </div>
     );
 };

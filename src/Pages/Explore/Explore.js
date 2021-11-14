@@ -1,6 +1,8 @@
 import { Container } from '@mui/material';
 import React from 'react';
 import useProducts from '../../hooks/UseProducts';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
 import Product from '../../Shared/Product/Product';
 import './Explore.css';
@@ -10,6 +12,7 @@ const Explore = () => {
     const {products} = useProducts();
     return (
         <div className="explore-page">
+            <Header></Header>
             <PageBanner pageName={pageName}></PageBanner>
             <section className="camera-collection">
                 <Container>
@@ -24,6 +27,7 @@ const Explore = () => {
                     </div>
                 </Container>
             </section>
+            <Footer></Footer>
         </div>
     );
 };

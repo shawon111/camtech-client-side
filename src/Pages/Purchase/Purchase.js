@@ -2,6 +2,8 @@ import { Container, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import UseAuth from '../../hooks/UseAuth';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
 import './Purchase.css';
 
@@ -24,6 +26,8 @@ const Purchase = () => {
     const [orderData, setOrderData] = useState({});
     const [ownerName, setOwnerName] = useState(user?.displayName);
     const [ownerEmail, setOwnerEmail] = useState(user?.email);
+    //order status (false==pending & true==approved)
+    const status = false;
     const productId = id;
     const handleNameChange = e =>{
         const updatedName = e.target.value;
@@ -44,7 +48,7 @@ const Purchase = () => {
 
     //handle on submit
     const handleOnSubmit = e => {
-        const orderInfo = {...orderData, ownerEmail, ownerName, productId};
+        const orderInfo = {...orderData, ownerEmail, ownerName, productId, status};
         const postUrl = `https://serene-beyond-56458.herokuapp.com/orders/neworder`;
         fetch(postUrl, {
             method: 'POST',
@@ -63,6 +67,7 @@ const Purchase = () => {
     }
     return (
         <div>
+            <Header></Header>
             <PageBanner pageName={pageName}></PageBanner>
             {/* product info section */}
             <section style={{ padding: '80px 0px' }} className="productInfo">
@@ -100,7 +105,7 @@ const Purchase = () => {
                                     label="Email"
                                     type="email"
                                     name="email"
-                                    onBlur={handleEmailChange}
+                                    onChange={handleEmailChange}
                                     defaultValue={user.email}
                                     style={{ width: '100%', marginBottom: '30px' }}
                                 />
@@ -128,6 +133,7 @@ const Purchase = () => {
                     </div>
                 </Container>
             </section>
+            <Footer></Footer>
         </div>
     );
 };
