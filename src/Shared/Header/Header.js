@@ -27,7 +27,7 @@ const Header = () => {
                             }
                         </div>
                         {
-                            user.email && <a href="/dashboard">{user?.displayName}</a>
+                            user.email && <button style={{backgroundColor: 'transparent', border: '2px solid var(--primaryColor)',padding: '8px',color: '#fff', fontSize: '18px', textTransform: 'capitalize'}} href="/dashboard">{user?.displayName}</button>
                         }
                     </div>
                 </div>
