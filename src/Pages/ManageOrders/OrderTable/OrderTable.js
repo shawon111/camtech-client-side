@@ -14,7 +14,7 @@ const OrderTable = ({ myOrder }) => {
     }, []);
     //cancel an order
     const handleCancelOrder = (id) => {
-        fetch(`http://localhost:5000/deleteorder/${id}`, {
+        fetch(`https://serene-beyond-56458.herokuapp.com/deleteorder/${id}`, {
             method: 'delete'
         })
             .then(res => res.json())
@@ -37,7 +37,7 @@ const OrderTable = ({ myOrder }) => {
     
     const approved = {status: true};
     const manageUpdateStatus = () => {
-        const url = `http://localhost:5000/orders/${_id}`;
+        const url = `https://serene-beyond-56458.herokuapp.com/orders/${_id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
