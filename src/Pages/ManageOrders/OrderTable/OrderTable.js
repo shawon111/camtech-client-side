@@ -35,7 +35,7 @@ const OrderTable = ({ myOrder }) => {
     //update order status
     let orderStatus;
     if (status) {
-        orderStatus = "Approved";
+        orderStatus = "Shipped";
     } else {
         orderStatus = "Pending";
     }

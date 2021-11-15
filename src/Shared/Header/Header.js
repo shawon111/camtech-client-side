@@ -26,9 +26,6 @@ const Header = () => {
                                     <Link className="menu-item" to="/login">Login</Link>
                             }
                         </div>
-                        {
-                            user.email && <button style={{backgroundColor: 'transparent', border: '2px solid var(--primaryColor)',padding: '8px',color: '#fff', fontSize: '18px', textTransform: 'capitalize'}} href="/dashboard">{user?.displayName}</button>
-                        }
                     </div>
                 </div>
             </Container>

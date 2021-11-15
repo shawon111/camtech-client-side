@@ -2,7 +2,7 @@ import React from 'react';
 import { faFacebookF, faGooglePlusG, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Footer.css';
-import { Container, TextField } from '@mui/material';
+import { Container} from '@mui/material';
 
 const Footer = () => {
     return (
