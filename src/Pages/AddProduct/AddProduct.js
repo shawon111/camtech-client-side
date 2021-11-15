@@ -21,7 +21,7 @@ const AddProduct = () => {
 
     //add product in database
     const handleAddProduct = (e) =>{
-        fetch('http://localhost:5000/addproduct', {
+        fetch('https://serene-beyond-56458.herokuapp.com/addproduct', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'

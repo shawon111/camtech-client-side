@@ -19,7 +19,7 @@ const AddReview = () => {
 
     //handle form submit
     const handleAddReview = e => {
-        fetch('http://localhost:5000/addreview', {
+        fetch('https://serene-beyond-56458.herokuapp.com/addreview', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
