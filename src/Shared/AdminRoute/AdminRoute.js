@@ -1,11 +1,12 @@
 import { CircularProgress } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Redirect, Route } from 'react-router';
 import UseAuth from '../../hooks/UseAuth';
 
-const PrivateRoute = ({ children, ...rest }) => {
-    const {user, isLoading} = UseAuth();
+const AdminRoute = ({ children, ...rest }) => {
+    const { isLoading, adminStatus } = UseAuth();
+
     if(isLoading){
         return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
         <CircularProgress style={{width: '80px'}} />
@@ -15,11 +16,11 @@ const PrivateRoute = ({ children, ...rest }) => {
         <Route
         {...rest}
         render={({ location }) =>
-        user.email ? ( 
+        adminStatus ? ( 
             children
          ) : (<Redirect
             to={{
-                pathname: '/login',
+                pathname: '/unauthorized',
                 state: {from : location}
             }}
             />)
@@ -30,4 +31,4 @@ const PrivateRoute = ({ children, ...rest }) => {
     );
 };
 
-export default PrivateRoute;
+export default AdminRoute;

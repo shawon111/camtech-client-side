@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home/Home';
@@ -17,6 +17,8 @@ import Registration from './Pages/Registration/Registration';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import AuthProvider from './context/AuthContext/AuthProvider';
 import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
+import UnAuthorized from './Pages/UnAuthorized/UnAuthorized';
+import AdminRoute from './Shared/AdminRoute/AdminRoute';
 
 function App() {
    return (
@@ -30,9 +32,9 @@ function App() {
                   <Route exact path="/explore">
                      <Explore></Explore>
                   </Route>
-                  <PrivateRoute exact path="/addproduct">
+                  <AdminRoute exact path="/addproduct">
                      <AddProduct></AddProduct>
-                  </PrivateRoute>
+                  </AdminRoute>
                   <PrivateRoute exact path="/addreview">
                      <AddReview></AddReview>
                   </PrivateRoute>
@@ -42,15 +44,15 @@ function App() {
                   <Route exact path="/login">
                      <Login></Login>
                   </Route>
-                  <PrivateRoute exact path="/makeadmin">
+                  <AdminRoute exact path="/makeadmin">
                      <MakeAdmin></MakeAdmin>
-                  </PrivateRoute>
-                  <PrivateRoute exact path="/manageorders">
+                  </AdminRoute>
+                  <AdminRoute exact path="/manageorders">
                      <ManageOrders></ManageOrders>
-                  </PrivateRoute>
-                  <PrivateRoute exact path="/manageproducts">
+                  </AdminRoute>
+                  <AdminRoute exact path="/manageproducts">
                      <ManageProduct></ManageProduct>
-                  </PrivateRoute>
+                  </AdminRoute>
                   <PrivateRoute exact path="/myorders">
                      <MyOrders></MyOrders>
                   </PrivateRoute>
@@ -62,6 +64,9 @@ function App() {
                   </PrivateRoute>
                   <Route exact path="/register">
                      <Registration></Registration>
+                  </Route>
+                  <Route exact path="/unauthorized">
+                     <UnAuthorized></UnAuthorized>
                   </Route>
                   <Route exact path="*">
                      <PageNotFound></PageNotFound>

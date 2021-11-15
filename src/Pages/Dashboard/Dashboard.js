@@ -9,8 +9,7 @@ import UseAuth from '../../hooks/UseAuth';
 
 const Dashboard = () => {
     const pageName = "Dashboard";
-    const { user } = UseAuth();
-    const [adminStatus, setAdminStatus] = useState(false);
+    const { adminStatus } = UseAuth();
     const pages = [
         "My Orders", "Manage Products", "Add Product", "Manage Orders", "Add Review", "Make Admin", "Payment"
     ]
@@ -18,16 +17,6 @@ const Dashboard = () => {
         "/myorders", "/manageproducts", "/addproduct", "/manageorders", "/addreview",
         "makeadmin", "/payment"
     ]
-
-    //check admin status
-    useEffect(() => {
-        const url = `https://serene-beyond-56458.herokuapp.com/users/${user?.email}`;
-        fetch(url, {
-            method: 'get'
-        }).then(res => res.json())
-            .then(data => setAdminStatus(data?.isAdmin))
-
-    }, [user]);
 
     return (
         <div>

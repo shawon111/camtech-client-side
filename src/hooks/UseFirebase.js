@@ -71,6 +71,17 @@ const useFirebase = () => {
         })
     }, []);
 
+     //check admin status
+     const [adminStatus, setAdminStatus] = useState(false);
+     useEffect(() => {
+         const url = `https://serene-beyond-56458.herokuapp.com/users/${user?.email}`;
+         fetch(url, {
+             method: 'get'
+         }).then(res => res.json())
+             .then(data => setAdminStatus(data?.isAdmin))
+ 
+     }, [user]);
+
     //handle logout
     const handleLogOut = () => {
         setIsLoading(true);
@@ -89,7 +100,8 @@ const useFirebase = () => {
         handleUserLogin,
         handleLogOut,
         handleAddUser,
-        isLoading
+        isLoading,
+        adminStatus
     }
 }
 
