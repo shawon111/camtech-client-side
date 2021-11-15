@@ -28,6 +28,19 @@ const useFirebase = () => {
             })
     }
 
+    //save users in database
+    const handleAddUser = () => {
+        const userInfo = {userEmail: email, isAdmin: false}
+        fetch('https://serene-beyond-56458.herokuapp.com/createuser', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+        }).then(res => res.json())
+        .then(data => console.log(data))
+    }
+
 
     //handle user login
     const handleUserLogin = () => {
@@ -66,7 +79,8 @@ const useFirebase = () => {
         setPassword,
         handleCreateUser,
         handleUserLogin,
-        handleLogOut
+        handleLogOut,
+        handleAddUser
     }
 }
 

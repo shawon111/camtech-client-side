@@ -1,0 +1,11 @@
+.create-admin-form-container{
+    width: 100%;
+}
+.create-admin-form-container form {
+    width: 50%;
+    margin: auto;
+}
+.admin-email{
+    width: 100%;
+    margin-bottom: 10px;
+}

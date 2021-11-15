@@ -11,7 +11,7 @@ import Header from '../../Shared/Header/Header';
 const Registration = () => {
     const pageName = "Register";
     const [userName,setUserName] = useState('');
-    const {setEmail, setPassword, handleCreateUser} = useFirebase();
+    const {setEmail, setPassword, handleCreateUser, handleAddUser} = useFirebase();
 
     const {user} = UseAuth();
     //get input values
@@ -31,7 +31,7 @@ const Registration = () => {
     //handle form submit
     const handleFormSubmit = (e) => {
         handleCreateUser(userName);
-        <Alert severity="success">This is a success alert — check it out!</Alert>
+        handleAddUser();
         e.preventDefault();
     }
 
