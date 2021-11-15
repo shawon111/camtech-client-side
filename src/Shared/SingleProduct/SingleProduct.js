@@ -6,7 +6,7 @@ const SingleProduct = ({ product }) => {
 
     //handle delete product
     const handleDeleteProduct = (id) => {
-        const url = `http://localhost:5000/delete/product/${id}`;
+        const url = `https://serene-beyond-56458.herokuapp.com/delete/product/${id}`;
         if (window.confirm("Are you sure want to delete this product?")) {
             fetch(url, {
                 method: 'delete'
