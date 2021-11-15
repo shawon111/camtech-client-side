@@ -60,7 +60,7 @@ const Purchase = () => {
         .then(res => res.json())
         .then(data => {
             if(data.insertedId.length > 0){
-                alert('order placed successfully')
+                alert('order placed successfully!!!')
             }
         })
         e.preventDefault();

@@ -1,0 +1,11 @@
+.add-product-container{
+    width: 100%;
+}
+.add-product-form-container{
+    width: 100%;
+    
+}
+.add-product-form-container form {
+    width: 70%;
+    margin: auto;
+}

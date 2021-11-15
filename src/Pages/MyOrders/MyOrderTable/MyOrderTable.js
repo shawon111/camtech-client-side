@@ -17,7 +17,8 @@ const MyOrderTable = ({myOrder}) => {
 
     //cancel an order
     const handleCancelOrder = (id) => {
-        fetch(`https://serene-beyond-56458.herokuapp.com/deleteorder/${id}`, {
+        if(window.confirm("Are you sure want to cancel this order?")){
+            fetch(`https://serene-beyond-56458.herokuapp.com/deleteorder/${id}`, {
             method: 'delete'
         })
         .then(res => res.json())
@@ -27,6 +28,10 @@ const MyOrderTable = ({myOrder}) => {
                 window.location.reload();
             }
         })
+        }else{
+            alert('Order not cancelled')
+        }
+        
     }
 
     //update order status
