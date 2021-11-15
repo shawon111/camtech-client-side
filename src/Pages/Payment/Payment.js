@@ -1,5 +1,6 @@
 import { Container } from '@mui/material';
 import React from 'react';
+import DashboardMenu from '../../Shared/DashboardMenu/DashboardMenu';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
@@ -10,6 +11,9 @@ const Payment = () => {
         <div>
             <Header></Header>
             <PageBanner pageName={pageName}></PageBanner>
+            <Container>
+                <DashboardMenu></DashboardMenu>
+            </Container>
             <section>
                 <Container>
                     <div>

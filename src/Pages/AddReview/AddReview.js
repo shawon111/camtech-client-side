@@ -3,6 +3,7 @@ import { Container, TextField } from '@mui/material';
 import Header from '../../Shared/Header/Header';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
 import Footer from '../../Shared/Footer/Footer';
+import DashboardMenu from '../../Shared/DashboardMenu/DashboardMenu';
 
 const AddReview = () => {
     const pageName = "Add Review";
@@ -37,6 +38,9 @@ const AddReview = () => {
         <div>
             <Header></Header>
             <PageBanner pageName={pageName}></PageBanner>
+            <Container>
+                <DashboardMenu></DashboardMenu>
+            </Container>
             <section style={{ paddingBottom: '80px' }}>
                 <Container>
                     <div className="add-review-container">

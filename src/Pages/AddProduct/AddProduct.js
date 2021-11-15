@@ -1,5 +1,6 @@
 import { Container, TextField } from '@mui/material';
 import React, { useState } from 'react';
+import DashboardMenu from '../../Shared/DashboardMenu/DashboardMenu';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
@@ -10,17 +11,17 @@ const AddProduct = () => {
     const [productData, setProductData] = useState({});
 
     //handle onBlur
-    
-        const handleOnBlur = e => {
-            const field = e.target.name;
-            const value = e.target.value;
-            const newProductData = {...productData};
-            newProductData[field] = value;
-            setProductData(newProductData); 
+
+    const handleOnBlur = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newProductData = { ...productData };
+        newProductData[field] = value;
+        setProductData(newProductData);
     }
 
     //add product in database
-    const handleAddProduct = (e) =>{
+    const handleAddProduct = (e) => {
         fetch('https://serene-beyond-56458.herokuapp.com/addproduct', {
             method: 'post',
             headers: {
@@ -28,17 +29,20 @@ const AddProduct = () => {
             },
             body: JSON.stringify(productData)
         }).then(res => res.json())
-        .then(data => {
-            if(data.insertedId.length > 0){
-                alert('Product Added successfully!!!')
-            }
-        })
+            .then(data => {
+                if (data.insertedId.length > 0) {
+                    alert('Product Added successfully!!!')
+                }
+            })
         e.preventDefault();
     }
     return (
         <div>
             <Header></Header>
             <PageBanner pageName={pageName}></PageBanner>
+            <Container>
+                <DashboardMenu></DashboardMenu>
+            </Container>
             <section style={{ paddingBottom: '80px' }}>
                 <Container>
                     <div className="add-product-container">
@@ -69,7 +73,7 @@ const AddProduct = () => {
                                     onBlur={handleOnBlur}
                                     style={{ width: '100%', marginBottom: '30px' }}
                                 />
-                                 <TextField
+                                <TextField
                                     id="outlined-product-name-input"
                                     label="Product Description"
                                     type="text"

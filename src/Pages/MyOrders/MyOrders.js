@@ -5,6 +5,7 @@ import { Container } from '@mui/material';
 import PageBanner from '../../Shared/PageBanner/PageBanner';
 import MyOrderTable from './MyOrderTable/MyOrderTable';
 import UseAuth from '../../hooks/UseAuth';
+import DashboardMenu from '../../Shared/DashboardMenu/DashboardMenu';
 
 const MyOrders = () => {
     const pageName = "My Orders";
@@ -25,6 +26,9 @@ const MyOrders = () => {
         <div>
             <Header></Header>
             <PageBanner pageName={pageName}></PageBanner>
+            <Container>
+                <DashboardMenu></DashboardMenu>
+            </Container>
             <section style={{paddingBottom: '80px'}}>
                 <Container>
                     <div className="my-order-container">

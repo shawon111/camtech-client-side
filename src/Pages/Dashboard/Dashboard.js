@@ -6,6 +6,7 @@ import PageBanner from '../../Shared/PageBanner/PageBanner';
 import DashboardLink from './DashboardLinks/DashboardLink';
 import './Dashboard.css';
 import UseAuth from '../../hooks/UseAuth';
+import DashboardMenu from '../../Shared/DashboardMenu/DashboardMenu';
 
 const Dashboard = () => {
     const pageName = "Dashboard";
@@ -22,6 +23,9 @@ const Dashboard = () => {
         <div>
             <Header></Header>
             <PageBanner pageName={pageName}></PageBanner>
+            <Container>
+                <DashboardMenu></DashboardMenu>
+            </Container>
             <section style={{ paddingBottom: '80px' }}>
                 <Container>
                     <div className="dashboard-container">
