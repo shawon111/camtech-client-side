@@ -19,12 +19,16 @@ import AuthProvider from './context/AuthContext/AuthProvider';
 import PrivateRoute from './Shared/PrivateRoute/PrivateRoute';
 import UnAuthorized from './Pages/UnAuthorized/UnAuthorized';
 import AdminRoute from './Shared/AdminRoute/AdminRoute';
+import SideCart from './Shared/SideCart/SideCart';
 
 function App() {
    return (
       <div>
          <AuthProvider>
             <BrowserRouter>
+               {/* //cart icon in the middle left of web pages */}
+               <SideCart />
+               {/* //cart icon in the middle left of web pages */}
                <Switch>
                   <Route exact path="/">
                      <Home></Home>
