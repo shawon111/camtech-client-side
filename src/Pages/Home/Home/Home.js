@@ -1,4 +1,4 @@
-import { Container } from '@mui/material';
+import { Button, Container } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useProducts from '../../../hooks/UseProducts';
@@ -12,6 +12,7 @@ import Product from '../../../Shared/Product/Product';
 import Review from '../../../Shared/Review/Review';
 import Header from '../../../Shared/Header/Header';
 import Footer from '../../../Shared/Footer/Footer';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 const Home = () => {
 
@@ -34,7 +35,18 @@ const Home = () => {
         fetch('https://serene-beyond-56458.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data));
-    }, [])
+    }, []);
+
+    // loading featured products data
+    const [featuredProducts, setFeaturedProducts] = useState([]);
+    useEffect(() => {
+        fetch('https://serene-beyond-56458.herokuapp.com/featured')
+            .then(res => res.json())
+            .then(data => setFeaturedProducts(data))
+    }, []);
+    const featured1 = featuredProducts[0];
+    const featured2 = featuredProducts[1];
+
     return (
         <div>
             <Header></Header>
@@ -58,6 +70,57 @@ const Home = () => {
                         <Pros img={money} bg={prosBg[1]} headline={prosHeadlines[1]} description={prosDescription[1]}></Pros>
                         <Pros img={discount} bg={prosBg[0]} headline={prosHeadlines[2]} description={prosDescription[2]}></Pros>
                         <Pros img={support} bg={prosBg[1]} headline={prosHeadlines[3]} description={prosDescription[3]}></Pros>
+                    </div>
+                </Container>
+            </section>
+            {/* Featured Cameras */}
+            <section style={{ padding: '40px 0px' }}>
+                <Container>
+                    <div className="featured-products">
+                        <div className='single-featured-product'>
+                            <img height={400} width={500} src={featured1?.img} alt="" />
+                            <h2>{featured1?.name}</h2>
+                            <p>{featured1?.description}</p>
+                            <Button variant="outlined" sx={{
+                                marginTop: '30px',
+                                padding: '12px 40px',
+                                borderWidth: '3px',
+                                borderColor: '#1e3799'
+                            }}><Link to="/" style={{
+                                fontSize: '20px',
+                                fontWeight: '600',
+                                textDecoration: 'none',
+                                color: '#1e3799'
+                            }}>SHOP NOW</Link></Button>
+                        </div>
+                        <div>
+                            <div className='single-featured-product'>
+                                <img height={300} width={400} src={featured2?.img} alt="" />
+                                <h2>{featured2?.name}</h2>
+                                <p>{featured2?.description.slice(0, 89)}...</p>
+                                <Button variant="outlined" sx={{
+                                    marginTop: '30px',
+                                    padding: '12px 40px',
+                                    borderWidth: '3px',
+                                    borderColor: '#1e3799'
+                                }}><Link to="/" style={{
+                                    fontWeight: '600',
+                                    fontSize: '20px',
+                                    textDecoration: 'none',
+                                    color: '#1e3799'
+                                }}>SHOP NOW</Link></Button>
+                            </div>
+                            <div className='mega-sell-banner'>
+                                <div className="mega-sell-container">
+                                    <h3> <ShoppingBasketIcon sx={{ fontSize: '50px' }} /> Mega Sale! </h3>
+                                    <div><p>
+                                        Get 20% discount in any deal!
+                                    </p>
+                                        <Button variant="text"><Link to="/">SHOP NOW</Link></Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </Container>
             </section>

@@ -25,7 +25,7 @@ const SideCart = () => {
             className="side-cart-icon"
             >
                 <Link style={{width: '100%', display: 'inline-block'}} to="/">
-                <Badge badgeContent={4} color="primary">
+                <Badge badgeContent={1} color="primary">
                     <AddShoppingCartIcon sx={{color: '#fff', fontSize: '27px'}} />
                 </Badge>
                 </Link>
